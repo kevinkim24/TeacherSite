@@ -12,7 +12,7 @@ import urllib
 #import auth
 # -------------------------------------------------------------------
 
-app = flask.Flask(__name__, template_folder='static/templates')
+app = flask.Flask(__name__, template_folder='static/templates', static_folder='static')
 app.secret_key = os.environ['APP_SECRET_KEY']
 
 # -------------------------------------------------------------------
@@ -29,6 +29,20 @@ def index():
 @app.route('/former_students', methods=['GET'])
 def former_students():
     html_code = flask.render_template('former_students.html')
+    response = flask.make_response(html_code)
+    return response
+
+# Exeter Summer 
+@app.route('/exeter_summer', methods=['GET'])
+def exeter_summer():
+    html_code = flask.render_template('exeter_summer.html')
+    response = flask.make_response(html_code)
+    return response
+
+# Test
+@app.route('/test', methods=['GET'])
+def test():
+    html_code = flask.render_template('test.html')
     response = flask.make_response(html_code)
     return response
 
