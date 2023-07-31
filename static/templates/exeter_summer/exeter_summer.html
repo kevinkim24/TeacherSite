@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Mr. Kim's Website</title> <!-- Browser tab text -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/templates/general.css">
+    <script src="static/javascript/processing.min.js"></script> <!-- Processing Script -->
+	</head>
+	<body>
+		{% include 'navbar.html' %}
+    <div class="margins-container">
+    <h1 class="head">Exeter Summer 2023 <br>
+      Introduction to Computer Science (A/C)
+    </h1>
+      <h3>Hello, Exeter Summer 2023 students from my Intro. to Computer Science class: <br>
+      
+      </h3>
+      <table style="width:100%" class="centered-text">
+        <tr>
+          <th><!--Make an Image-->
+            <script type="application/processing"> 
+            {% include 'processing/make-an-image/elyas.pde' %}
+            </script>
+            <canvas id="sketch" style="max-width:12rem;"> </canvas></th>
+          <th><!--Sour Task-->
+            <script type="application/processing"> 
+              {% include 'processing/lemons/leo.pde' %}
+              </script>
+              <canvas id="sketch" style="max-width:12rem;"> </canvas></th>
+          <th><!--Watch-->
+            <script type="application/processing"> 
+            {% include 'processing/watches/Sunny_Alex.pde' %}
+            </script> 
+            <canvas id="sketch" style="max-width:12rem;"></canvas></th>
+          <th>Placeholder</th>
+        </tr>
+        <tr>
+          <td><a href="/exeter_summer/image">Make an Image</a></td>
+          <td><a href="/exeter_summer/lemon">A Sour Task</a></td>
+          <td><a href="/watch">Sell Me Your Watch</a></td>
+          <td><a href="/exeter_summer/design">Design Project</a></td>
+        </tr>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	</body>
+</html>

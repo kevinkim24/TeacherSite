@@ -32,17 +32,46 @@ def former_students():
     response = flask.make_response(html_code)
     return response
 
+# -------------------------------------------------------------------
+
 # Exeter Summer 
 @app.route('/exeter_summer', methods=['GET'])
 def exeter_summer():
-    html_code = flask.render_template('exeter_summer.html')
+    html_code = flask.render_template('exeter_summer/exeter_summer.html')
     response = flask.make_response(html_code)
     return response
 
+# Watch Assignment
+@app.route('/watch', methods=['GET'])
+def es_watch():
+    html_code = flask.render_template('exeter_summer/watch.html')
+    response = flask.make_response(html_code)
+    return response
+
+@app.route('/exeter_summer/image', methods=['GET'])
+def es_image():
+    html_code = flask.render_template('exeter_summer/image.html')
+    response = flask.make_response(html_code)
+    return response
+
+@app.route('/exeter_summer/design', methods=['GET'])
+def es_design():
+    html_code = flask.render_template('exeter_summer/design.html')
+    response = flask.make_response(html_code)
+    return response
+
+@app.route('/exeter_summer/lemon', methods=['GET'])
+def es_lemon():
+    html_code = flask.render_template('exeter_summer/lemon.html')
+    response = flask.make_response(html_code)
+    return response
+
+# -------------------------------------------------------------------
+
 # Test
-@app.route('/test', methods=['GET'])
+@app.route('/testing', methods=['GET'])
 def test():
-    html_code = flask.render_template('test.html')
+    html_code = flask.render_template('exeter_summer/testing.html')
     response = flask.make_response(html_code)
     return response
 
