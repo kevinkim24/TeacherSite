@@ -1,0 +1,30 @@
+1. Introduction:
+
+Our group, AKK, including Alex, Khaled and Khoa, designed a cool game called “Pinball - Fun games”. Our program basically consists of four major parts. On the one hand we have the GUI and the graphical part, but also the mechanics for example of the ball. Then there's the audio, which is supposed to support the whole gaming experience and make it more fun to play. For the sound we had to install a sound library made by the Processing Foundation, but this library has several problems so we switch to using the launch() function which will open a sound file in the computer. As well, we used “rectMode” to draw a rectangle not from the top, but from the center.
+"surface.setAlwaysOnTop(true)" is used so the window will always on the top.
+
+
+2. Gameplay:
+
+A) GUI: You can choose the color of your ball!
+B) Once the game starts, the ball will appear in the playfield.
+C) The ball will bounce around and hit targets in the playfield.
+Each time the ball hits a target it will trigger a Star Wars sound effect. Cool, right?
+Scoring:
+A) You'll earn points for hitting targets, and the more targets you hit in a row, the higher your combo score will be!
+B) Aim for the top score and become a legendary Jedi gamer!
+Game Over:
+The game ends when the ball falls past the handles and reaches the bottom. But don't worry, young Jedi, you can always try again and improve your skills!
+
+3. Explanation of the code:
+
+Major variables:
+- sizeWidth: Width/2
+- sizeHeight: Height/2
+- String sound: Defines the path/the instructions to access the audio file
+Functions:
+- drawPinBall(): Draws the basic setup
+- hands(): Draw the hands
+- ball(): Draws the ball
+Conditional:
+- To check if the player clicked “yes”

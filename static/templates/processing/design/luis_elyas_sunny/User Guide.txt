@@ -1,0 +1,82 @@
+Game: ARCADE Sim
+CREATORS: Luiz, Sunny, Elyas
+Overveiw: The program is an arcade simulator in which there are four modes/games,
+each of which will get their own explanation in a little bit. The games include Snake,
+Flappy Ball, Pong, and a Mystery game for you to explore!
+
+EXTERNAL THINGS: The usage of the sound library to insert music within the code
+
+Functions:
+	Menu: The menu function calls upon other functions in which it creates buttons
+	that are clickable and the buttons have lables, if one were to click a button
+	it will take them to the mode of that game; so per se it will take them to pong.
+	There is also a music button in which if it was clicked or "M" was clicked then it
+	would toggle the music in the entire code.
+
+	OverRect&OverCirc: OverRect and OverCirc are two functions that were made to make
+	the process of making buttons easier and what it does is check of mouseX and mouseY
+	are within the correct barriers to click the button.
+
+	Pong: the pong() function call every other function needed for the game to work: the 
+	movement, the drawing of the elements and everything in between. It is basically a smart
+	use of rectangles and an ellipse to emulate collisions and make the ball go back and 
+	forth, always accelerating.
+
+	Snake: the snake() function call everything needed to make the game work. For this one,
+	there was a need to use the custom classes BodyPart and Apple (which basically store x 
+	and y values) and an array of objects of type BodyPart to represent the snake.
+
+	Flappy: Within flappy, there are many lines of code to calculate the physics of the 	
+	ball and make it go up and down as it would, there are also lines of code to make 	
+	create the pillars and in random heights, as well as some codes to measure when 	
+	flappy goes through pillar and keep score.
+
+	keyPressed: Within the keyPressed function, it was used within almost all modes to
+	detect whether or not someone has clicked a button to call a certain function. That
+	means when "M" is pressed in menu it will mute the music, when "W" or "S" is 	clicked
+	in pong then it will move the racket up and down, etc. .
+	
+	
+STEP BY STEP:
+Once the game is opened you will be greeted by music in the menu mode. If your heart desired
+you can click 'M' or click the green button to mute the music, and if you wished to bring it
+back, then all you need to do is click 'M' again, or click the red circle (only if you are
+in the menu).
+
+Once you got set with that, move your cursor to the desired mode, whether that mode was Pong,
+Snake, Flappy Ball, or the Mystery mode!
+
+Pong:
+In pong the ball will automatically start coming towards you, and you can click either the
+'W' or 'S' to move the racket up and down to hit the ball, the more off center you hit the
+ball, the more diverse Y-axis movement it will have (meaning hitting it off center will make
+it harder for the opponent to catch the ball).
+
+Snake:
+In snake you will begin by moving and you are tasked with clicking the arrow keys to change
+the direction in which you are moving so that you do not die. You will die if you hit the edge of the board or if you walk into yourself. You are tasked to attain the green squares to gain more and more points and elongate the body of your snake. Once you die you can click R or ENTER to restart.
+
+Flappy Ball:
+In flappy ball you are tasking with clicking the mouse to make the ball jump, and your goal is to go through the white pipes. There is a score counter on the top left that will keep your score throughout your gameplay. Once you die you can click on the screen again to start the game again.
+
+Mystery Mode:
+The Mystery Mode is PAINT!! Yes, it is paint, once you are in the mystery mode you will be met with a black screen, and you can use your mouse to start writing or drawing whatever your heart desrires on the screen, once you feel fed up with the screen you can click 'C' to clear the board and start drawing all over again.
+
+LEAVING MODES:
+If you are in one of the non-menu modes and you want to leave that mode to try another one, you can click 'L' and that will take you back to the menu.
+
+ONCE YOU ARE DONE:
+Once you have finished playing around with our code, you can click 'ESC' to close the code and continue with the rest of your day.
+
+
+EXPLANATION OF THE CODE:
+This right here is an overview of the code as a whole - it won't go in many details, but will explain the basic idea of how we got everything working together.
+
+Firstly, sound - we import the Sound class from processing and a sound file from the project folder, and start a loop of our song on the background - enabling or disabling it is done through the musicMode variable: whenever it true, the sound is on, and when it is false, the volume is set to zero. (this is checked during draw()).
+
+For the general idea of the code - we use a very important variable called "mode". This variable is an integer that varies between 0 and 4 (inclusive). That is what controls how our code is handled. Each of the values mode can be set to represent a different screen - 0 is for the menu, 1 is for flappy ball, 2 is for pong, 3 is for snake, and, finally, 4 is for paint.
+All of the global functions run based on this - for instance, in the draw() function, what is drawn to the screen depends on this (with the use of conditional statements). The keyPressed() function also has a similar logic to this.
+
+To change modes, we have the key 'l', which will change it to 0, or the clicking of the menu() buttons (which already had an explanation on how they work in this document). The button click functions also act as the setup function for whichever mode you are entering - that way, we ensure that this is only run once.
+
+The more detailed explanation on how each line of code works will be on the processing file (since we have over 600 lines, it would be hard to explain everything inside here)

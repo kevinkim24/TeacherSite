@@ -71,7 +71,7 @@ def es_lemon():
 # Test
 @app.route('/testing', methods=['GET'])
 def test():
-    html_code = flask.render_template('exeter_summer/testing.html')
+    html_code = flask.render_template('test.html')
     response = flask.make_response(html_code)
     return response
 
