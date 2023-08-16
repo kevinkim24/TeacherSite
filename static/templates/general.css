@@ -7,6 +7,27 @@ h1.head{
     line-height:1.5;
     margin-bottom:0;
 }
+h1.head a:hover{
+    color:rgb(111, 164, 143);
+}
+a.projects-current{
+    color:rgb(111, 164, 143);
+    font-family: sans-serif;
+    font-weight: 10;
+    text-align:center;
+    line-height:1.5;
+    margin-bottom:0;
+    text-decoration: none;
+}
+a.projects-other{
+    color:rgb(119, 119, 119);
+    font-family: sans-serif;
+    font-weight: 10;
+    text-align:center;
+    line-height:1.5;
+    margin-bottom:0;
+    text-decoration: none;
+}
 h2{
     font-family: sans-serif;
     font-weight: 390;
