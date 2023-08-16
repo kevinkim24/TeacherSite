@@ -7,6 +7,11 @@ h1.head{
     line-height:1.5;
     margin-bottom:0;
 }
+h2{
+    font-family: sans-serif;
+    font-weight: 390;
+    font-size:1.4rem;
+}
 h3{
     font-family: sans-serif;
     font-weight: 10;
@@ -14,8 +19,15 @@ h3{
 }
 h4{
     font-family: sans-serif;
-    font-weight: 10;
+    font-weight: 20;
     font-size:1rem;
+    margin-bottom:0;
+}
+small{
+    font-family: sans-serif;
+    font-weight: 20;
+    font-size:0.8rem;
+    margin-bottom:0;
 }
 .margins-container{
     padding-left:50px;
@@ -27,9 +39,11 @@ h4{
 .gallery{
     padding:1rem;
 }
-
 table.centered-text{
     text-align:center;
+}
+.quad{
+    width:25%;
 }
 a.nav{
     color:rgb(111, 164, 143);

@@ -5,12 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/templates/general.css">
-    <script src="static/javascript/processing.min.js"></script> <!-- Processing Script -->
+    <script src="../static/javascript/processing.min.js"></script> <!-- Processing Script -->
   </head>
 	<body>
     {% include 'navbar.html' %}
-		<h1>Watch</h1>
-    ds
+		<div class="margins-container">
+      <h1 class="head">Watch Projects</h1>
+      <a href="../static/templates/processing/watches/ES_Watch_Project_Directions-2.pdf" download>Download Directions PDF</a> <br><br>
+      <table style="width:100%" class="centered-text">
+        <tr>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/leo_rodrigo.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
+            <b>Leo M., Rodrigo B.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/gui_esteban.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;border-style:solid;border-width:2px;"> </canvas>
+            <br>
+            <b>Gui H., Esteban R.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/hayden_abdulrahman.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Hayden K., Abdulrahman H.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/kerem_kevin.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Kerem D., Kevin W.</b>
+          </td>
+        </tr>
+        <tr><td><br><br></td><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/sunny_alex.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
+            <b>Sunny T., Alex R.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/khoa_khaled.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;border-style:solid;border-width:2px;"> </canvas>
+            <br>
+            <b>Khoa H., Khaled L.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/elyas_luiz.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Elyas A., Luiz C.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/amyra_julia.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Amyra P., Julia S.</b>
+          </td>
+        </tr>
+        <tr><td><br><br></td><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/emily.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
+            <b>Emily D.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/peter_omer.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;border-style:solid;border-width:2px;"> </canvas>
+            <br>
+            <b>Peter K., Omer O.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/rosa_luke.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Rosa G., Luke S.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/watches/kim.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Mr.Kim</b>
+          </td>
+        </tr>
+      </table>
+
+    </div>
 		<canvas id="sketch" style="max-width:10rem;"> </canvas>
 		<p id="label"></p>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

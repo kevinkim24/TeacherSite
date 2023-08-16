@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="static/templates/general.css">
     <script src="static/javascript/processing.min.js"></script> <!-- Processing Script -->
+    
 	</head>
 	<body>
 		{% include 'navbar.html' %}
@@ -13,34 +14,65 @@
     <h1 class="head">Exeter Summer 2023 <br>
       Introduction to Computer Science (A/C)
     </h1>
-      <h3>Hello, Exeter Summer 2023 students from my Intro. to Computer Science class: <br>
-      
-      </h3>
+    <div style="text-align:center;padding-bottom:2rem;">
+    <button onclick="toggle()" id="ES-button" class="btn btn-secondary" style="align-self:center;">Open Letter</button></div>
+      <div id="ES-letter" style="display:none;">
+        <h3> <br>
+          {% include 'exeter_summer/note' %} 
+        </h3>
+      </div>
+      <script>
+          function toggle() {
+            var letter = document.getElementById("ES-letter");
+            var button = document.getElementById("ES-button");
+            if(letter.style.display==="none"){
+              letter.style.display = "inline";
+              button.innerHTML = "Close Letter";
+            }
+            else{
+              letter.style.display = "none";
+              button.innerHTML = "Open Letter";
+            }
+          }
+          /*console.log(letter.style.display);
+          var letter = document.getElementById("ES-letter");
+          if (letter.style.display === "none"){
+            letter.style.display = "inline";
+          }
+          else{
+            letter.style.display = "none";
+          }*/
+        
+      </script>
       <table style="width:100%" class="centered-text">
         <tr>
-          <th><!--Make an Image-->
+          <th class="quad"><!--Make an Image-->
             <script type="application/processing"> 
             {% include 'processing/make-an-image/elyas.pde' %}
             </script>
-            <canvas id="sketch" style="max-width:12rem;"> </canvas></th>
-          <th><!--Sour Task-->
+            <canvas id="sketch" style="max-width:80%;"> </canvas><br>
+            <a href="/exeter_summer/image">Make an Image</a>
+          </th>
+          <th class="quad"><!--Sour Task-->
             <script type="application/processing"> 
               {% include 'processing/lemons/leo.pde' %}
               </script>
-              <canvas id="sketch" style="max-width:12rem;"> </canvas></th>
-          <th><!--Watch-->
+              <canvas id="sketch" style="max-width:80%;"> </canvas><br>
+              <a href="/exeter_summer/lemon">A Sour Task</a>
+          </th>
+          <th class="quad"><!--Watch-->
             <script type="application/processing"> 
             {% include 'processing/watches/Sunny_Alex.pde' %}
             </script> 
-            <canvas id="sketch" style="max-width:12rem;"></canvas></th>
-          <th>Placeholder</th>
+            <canvas id="sketch" style="max-width:80%;"></canvas><br>
+            <a href="/exeter_summer/watch">Sell Me Your Watch</a>
+          </th>
+          <th class="quad"><!--Design Project-->
+            <img src="../static/images/leo_esteban_rodrigo.gif" style="max-width:80%;"></img><br>
+            <a href="/exeter_summer/design">Design Project</a>
+          </th>
         </tr>
-        <tr>
-          <td><a href="/exeter_summer/image">Make an Image</a></td>
-          <td><a href="/exeter_summer/lemon">A Sour Task</a></td>
-          <td><a href="/watch">Sell Me Your Watch</a></td>
-          <td><a href="/exeter_summer/design">Design Project</a></td>
-        </tr>
+       
       </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

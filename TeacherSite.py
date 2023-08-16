@@ -42,7 +42,7 @@ def exeter_summer():
     return response
 
 # Watch Assignment
-@app.route('/watch', methods=['GET'])
+@app.route('/exeter_summer/watch', methods=['GET'])
 def es_watch():
     html_code = flask.render_template('exeter_summer/watch.html')
     response = flask.make_response(html_code)
@@ -76,4 +76,4 @@ def test():
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5000)
