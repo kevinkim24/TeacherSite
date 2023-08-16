@@ -34,18 +34,9 @@
               button.innerHTML = "Open Letter";
             }
           }
-          /*console.log(letter.style.display);
-          var letter = document.getElementById("ES-letter");
-          if (letter.style.display === "none"){
-            letter.style.display = "inline";
-          }
-          else{
-            letter.style.display = "none";
-          }*/
-        
       </script>
       <table style="width:100%" class="centered-text">
-        <tr>
+        <tr style="height:8rem;">
           <th class="quad"><!--Make an Image-->
             <script type="application/processing"> 
             {% include 'processing/make-an-image/elyas.pde' %}
@@ -55,7 +46,7 @@
           </th>
           <th class="quad"><!--Sour Task-->
             <script type="application/processing"> 
-              {% include 'processing/lemons/leo.pde' %}
+              {% include 'processing/lemons/khoa.pde' %}
               </script>
               <canvas id="sketch" style="max-width:80%;"> </canvas><br>
               <a href="/exeter_summer/lemon">A Sour Task</a>
@@ -68,7 +59,7 @@
             <a href="/exeter_summer/watch">Sell Me Your Watch</a>
           </th>
           <th class="quad"><!--Design Project-->
-            <img src="../static/images/leo_esteban_rodrigo.gif" style="max-width:80%;"></img><br>
+            <img src="../static/images/leo_esteban_rodrigo.gif" style="max-width:66%;"></img><br>
             <a href="/exeter_summer/design">Design Project</a>
           </th>
         </tr>

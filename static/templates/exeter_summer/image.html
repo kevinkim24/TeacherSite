@@ -5,11 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/templates/general.css">
-    <script src="static/javascript/processing.min.js"></script> <!-- Processing Script -->
+    <script src="../static/javascript/processing.min.js"></script> <!-- Processing Script -->
   </head>
 	<body>
-    {% include 'exeter_summer/navbar2.html' %}
-		<h1>Image</h1>
+    {% include 'navbar.html' %}
+		<div class="margins-container">
+      <h1 class="head">Make an Image</h1>
+      <table style="width:100%" class="centered-text">
+        <tr>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/leo.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
+            <b>Leo M.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/zachary.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Zachary C.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/abdulrahman.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Abdulrahman H.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/khoa.pde'%}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Khoa H.</b>
+          </td>
+        </tr>
+        <tr><td><br><br></td><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/gui.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
+            <b>Gui H.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/reika.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Reika U.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/luiz.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Luiz C.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/alex_g.pde'%}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Alex G.</b>
+          </td>
+        </tr>
+        <tr><td><br><br></td><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/peter.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
+            <b>Peter K.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/omer.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Omer O.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/luke.pde' %}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Luke S.</b>
+          </td>
+          <td class="quad">
+            <script type="application/processing">{% include 'processing/make-an-image/sunny.pde'%}</script>
+            <canvas id="sketch" style="max-width:80%;"> </canvas>
+            <br>
+            <b>Sunny T.</b>
+          </td>
+        </tr>
+        <tr><td><br><br></td><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="quad">
+            <img src="../static/templates/processing/make-an-image/kerem.png" style="max-width:80%;"></img><br>
+            <b>Kerem D.</b>
+          </td>
+          <td class="quad">
+            <img src="../static/templates/processing/make-an-image/khaled.png" style="max-width:80%;"></img><br>
+            <b>Khaled L.</b>
+          </td>
+          <td class="quad">
+            <img src="../static/templates/processing/make-an-image/esteban.jpg" style="max-width:80%;"></img><br>
+            <b>Esteban R.</b>
+          </td>
+          <td class="quad">
+            <img src="../static/templates/processing/make-an-image/rosa.png" style="max-width:80%;"></img><br>
+            <b>Rosa G.</b>
+          </td>
+        </tr>
+        <tr><td><br><br></td><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="quad">
+            <img src="../static/templates/processing/make-an-image/amyra.png" style="max-width:80%;"></img><br>
+            <b>Amyra P.</b>
+          </td>
+          <td class="quad">
+            <img src="../static/templates/processing/make-an-image/julia.png" style="max-width:80%;"></img><br>
+            <b>Julia S.</b>
+          </td>
+          <td class="quad">
+          </td>
+          <td class="quad">
+          </td>
+        </tr>
+        </table>
+        </div>
     
 		<canvas id="sketch" style="max-width:10rem;"> </canvas>
 		<p id="label"></p>
