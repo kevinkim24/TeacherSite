@@ -1,5 +1,6 @@
 // Configuration
-const FLASK_URL = 'http://localhost:5000/plt-blocks/execute_plot';
+//const FLASK_URL = 'http://localhost:5000/plt-blocks/execute_plot'; // For local dev
+const FLASK_URL = 'http://mxork.com/plt-blocks/execute_plot'
 const colorOptions = ['red', 'blue', 'green', 'purple', 'orange', 'yellow', 'custom'];
 
 // State
