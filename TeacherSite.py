@@ -133,7 +133,7 @@ plt.savefig(r'{plot_file}', bbox_inches='tight')
                 ["python3", script_path],
                 capture_output=True,
                 text=True,
-                timeout=5,
+               # timeout=5,
                 cwd=tmpdir
             )
 
