@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matplotlib Block Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="flex h-screen bg-gray-100">
+        <!-- Block Palette -->
+        <div class="w-56 bg-white border-r p-4 overflow-y-auto">
+            <h2 class="text-xl font-bold mb-4">Blocks</h2>
+            <div id="blockPalette" class="space-y-2"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <div class="bg-white border-b p-3 flex items-center justify-between">
+                <h1 class="text-2xl font-bold">Matplotlib Block Builder</h1>
+                <button id="runButton" class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed">
+                    <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg id="loadingIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" class="animate-spin">
+                        <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                    </svg>
+                    <span id="runButtonText">Run</span>
+                </button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 items-start gap-2" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div id="errorText" class="text-sm"></div>
+            </div>
+
+            <!-- Workspace and Preview -->
+            <div class="flex-1 flex overflow-hidden">
+                <!-- Workspace -->
+                <div class="flex-1 p-4 overflow-y-auto overflow-x-auto">
+                    <div class="bg-gray-50 rounded-lg p-4 min-h-full">
+                        <h3 class="text-lg font-semibold mb-4">Workspace</h3>
+                        <div id="workspace" class="space-y-4">
+                            <p class="text-gray-400 text-center py-8">Drag blocks here to start</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="w-2/5 bg-white border-l p-4 flex flex-col overflow-hidden">
+                    <h3 class="text-lg font-semibold mb-3">Preview & Code</h3>
+                    
+                    <!-- Preview Image -->
+                    <div class="bg-gray-50 rounded-lg p-3 mb-3 flex items-center justify-center min-h-80">
+                        <div id="plotPreview">
+                            <p class="text-gray-400">Click "Run" to generate plot</p>
+                        </div>
+                    </div>
+
+                    <!-- Code Output -->
+                    <div class="flex-1 bg-gray-900 rounded-lg p-3 overflow-auto">
+                        <pre id="codeOutput" class="text-green-400 text-sm font-mono whitespace-pre-wrap"># Click "Run" to generate code</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/javascript/block-builder.js"></script>
+</body>
+</html>
