@@ -137,12 +137,13 @@ plt.savefig(r'{plot_file}', bbox_inches='tight')
             )
 
             if os.path.exists(plot_file):
+                print("PLT Success")
                 with open(plot_file, "rb") as img_f:
                     img_base64 = base64.b64encode(img_f.read()).decode("utf-8")
             else:
+                print("PLT is None")
                 img_base64 = None
 
-            print("PLT SUCCESS")
             return flask.jsonify({
                 "success": True,
                 "message": "Plot executed successfully",

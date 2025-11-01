@@ -289,7 +289,8 @@ async function runCode() {
         });
       
         const data = await response.json();
-
+        console.log(data);
+        
         if (data.success) {
      
             document.getElementById('plotPreview').innerHTML = '<img src="data:image/png;base64,' + data.image + '" alt="Matplotlib output" class="max-w-full max-h-full">';
