@@ -106,7 +106,8 @@ def execute_plot():
     
     # Run code in temp Sandbox for security
     try:
-        with tempfile.TemporaryDirectory() as tmpdir:
+        with tempfile.TemporaryDirectory(dir='/tmp') as tmpdir:
+            print(f"Created temporary directory: {tmpdir}")
             script_path = os.path.join(tmpdir, "user_code.py")
             plot_file = os.path.join(tmpdir, "plot.png")
             # --- Wrap user code safely ---
