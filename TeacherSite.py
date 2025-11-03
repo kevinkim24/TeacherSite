@@ -81,7 +81,7 @@ def es_lemon():
 # PLT Blocks
 @app.route('/plt-blocks', methods=['GET'])
 def plt_blocks():
-    html_code = flask.render_template('plt-blocks.html')
+    html_code = flask.render_template('plt-blocks2.html')
     response = flask.make_response(html_code)
     return response
 
