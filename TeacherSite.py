@@ -45,6 +45,15 @@ def former_students():
 # -------------------------------------------------------------------
 
 # Exeter Summer 
+@app.route('/cs-curriculum', methods=['GET'])
+def cs_curriculum():
+    html_code = flask.render_template('cs-curriculum.html')
+    response = flask.make_response(html_code)
+    return response
+
+# -------------------------------------------------------------------
+
+# Exeter Summer 
 @app.route('/exeter_summer', methods=['GET'])
 def exeter_summer():
     html_code = flask.render_template('exeter_summer/exeter_summer.html')
@@ -171,4 +180,4 @@ def test():
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
