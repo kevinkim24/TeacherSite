@@ -31,14 +31,14 @@ app.secret_key = os.environ['APP_SECRET_KEY']
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
 def index():
-    html_code = flask.render_template('index.html')
+    html_code = flask.render_template('home/index.html', active='home')
     response = flask.make_response(html_code)
     return response
 
 # Former Students 
 @app.route('/former_students', methods=['GET'])
 def former_students():
-    html_code = flask.render_template('former_students.html')
+    html_code = flask.render_template('former_students/former_students.html')
     response = flask.make_response(html_code)
     return response
 
@@ -47,41 +47,41 @@ def former_students():
 # Exeter Summer 
 @app.route('/cs-curriculum', methods=['GET'])
 def cs_curriculum():
-    html_code = flask.render_template('cs-curriculum.html')
+    html_code = flask.render_template('cs_curriculum/cs-curriculum.html')
     response = flask.make_response(html_code)
     return response
 
 # -------------------------------------------------------------------
 
-# Exeter Summer 
+# Exeter Summer
 @app.route('/exeter_summer', methods=['GET'])
 def exeter_summer():
-    html_code = flask.render_template('exeter_summer/exeter_summer.html')
+    html_code = flask.render_template('exeter_summer/exeter_summer.html', active='exeter', subactive='hub')
     response = flask.make_response(html_code)
     return response
 
 # Watch Assignment
 @app.route('/exeter_summer/watch', methods=['GET'])
 def es_watch():
-    html_code = flask.render_template('exeter_summer/watch.html')
+    html_code = flask.render_template('exeter_summer/watch.html', active='exeter', subactive='watch')
     response = flask.make_response(html_code)
     return response
 
 @app.route('/exeter_summer/image', methods=['GET'])
 def es_image():
-    html_code = flask.render_template('exeter_summer/image.html')
+    html_code = flask.render_template('exeter_summer/image.html', active='exeter', subactive='image')
     response = flask.make_response(html_code)
     return response
 
 @app.route('/exeter_summer/design', methods=['GET'])
 def es_design():
-    html_code = flask.render_template('exeter_summer/design.html')
+    html_code = flask.render_template('exeter_summer/design.html', active='exeter', subactive='design')
     response = flask.make_response(html_code)
     return response
 
 @app.route('/exeter_summer/lemon', methods=['GET'])
 def es_lemon():
-    html_code = flask.render_template('exeter_summer/lemon.html')
+    html_code = flask.render_template('exeter_summer/lemon.html', active='exeter', subactive='lemon')
     response = flask.make_response(html_code)
     return response
 
@@ -90,7 +90,7 @@ def es_lemon():
 # PLT Blocks
 @app.route('/plt-blocks', methods=['GET'])
 def plt_blocks():
-    html_code = flask.render_template('plt-blocks2.html')
+    html_code = flask.render_template('plt_blocks/plt-blocks2.html')
     response = flask.make_response(html_code)
     return response
 
@@ -172,10 +172,19 @@ plt.savefig(r'{plot_file}', bbox_inches='tight')
 
 # -------------------------------------------------------------------
 
+# NumPy Lab
+@app.route('/nplab', methods=['GET'])
+def nplab():
+    html_code = flask.render_template('nplab/nplab.html')
+    response = flask.make_response(html_code)
+    return response
+
+# -------------------------------------------------------------------
+
 # Test
 @app.route('/testing', methods=['GET'])
 def test():
-    html_code = flask.render_template('test.html')
+    html_code = flask.render_template('misc/test.html')
     response = flask.make_response(html_code)
     return response
 

@@ -1,105 +1,87 @@
-<!DOCTYPE html>
-<html>
-	<head>
-    <title>Mr. Kim's Website</title> <!-- Browser tab text -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/templates/general.css">
-    <script src="../static/javascript/processing.min.js"></script> <!-- Processing Script -->
-  </head>
-	<body>
-    {% include 'navbar.html' %}
-		<div class="margins-container">
-      <h1 class="head">
-        <a class="projects-other" href="/exeter_summer/image">Make an Image</a>
-        <a class="projects-other" href="/exeter_summer/lemon" style="padding-left:3rem;padding-right:3rem;">Sour Task</a>
-        Watches
-        <a class="projects-other" href="/exeter_summer/design"style="padding-left:3rem;">Design Project</a>
-      </h1>
-      <a href="../static/templates/processing/watches/ES_Watch_Project_Directions-2.pdf" download>Download Directions PDF</a> <br><br>
-      <table style="width:100%" class="centered-text">
-        <tr>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/leo_rodrigo.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
-            <b>Leo M., Rodrigo B.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/gui_esteban.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;border-style:solid;border-width:2px;"> </canvas>
-            <br>
-            <b>Gui H., Esteban R.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/hayden_abdulrahman.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas>
-            <br>
-            <b>Hayden K., Abdulrahman H.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/kerem_kevin.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas>
-            <br>
-            <b>Kerem D., Kevin W.</b>
-          </td>
-        </tr>
-        <tr><td><br><br></td><td></td><td></td><td></td></tr>
-        <tr>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/sunny_alex.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
-            <b>Sunny T., Alex R.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/khoa_khaled.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;border-style:solid;border-width:2px;"> </canvas>
-            <br>
-            <b>Khoa H., Khaled L.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/elyas_luiz.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas>
-            <br>
-            <b>Elyas A., Luiz C.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/amyra_julia.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas>
-            <br>
-            <b>Amyra P., Julia S.</b>
-          </td>
-        </tr>
-        <tr><td><br><br></td><td></td><td></td><td></td></tr>
-        <tr>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/emily.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas> <br>
-            <b>Emily D.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/peter_omer.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;border-style:solid;border-width:2px;"> </canvas>
-            <br>
-            <b>Peter K., Omer O.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/rosa_luke.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas>
-            <br>
-            <b>Rosa G., Luke S.</b>
-          </td>
-          <td class="quad">
-            <script type="application/processing">{% include 'processing/watches/kim.pde' %}</script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas>
-            <br>
-            <b>Mr.Kim</b>
-          </td>
-        </tr>
-      </table>
+{% extends '_shared/window_base.html' %}
+{% from '_shared/_macros.html' import window_card %}
 
-    </div>
-		<canvas id="sketch" style="max-width:10rem;"> </canvas>
-		<p id="label"></p>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-	</body>
-</html>
+{% block pagetitle %}Sell Me Your Watch — Mr. Kim's Website{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='templates/exeter_summer/exeter.css') }}">
+{% endblock %}
+
+{% block extra_head %}
+<script src="{{ url_for('static', filename='javascript/processing.min.js') }}"></script>
+{% endblock %}
+
+{% block titlebar %}mxork — Sell Me Your Watch{% endblock %}
+{% block pathbar %}mxork <span class="sep">›</span> Student Projects <span class="sep">›</span> <a href="/exeter_summer" style="color:inherit;text-decoration:none;">Exeter Summer '23</a> <span class="sep">›</span> <span class="here">Sell Me Your Watch</span>{% endblock %}
+
+{% block content %}
+<p class="eyebrow">Exeter Summer '23 · Introduction to Computer Science</p>
+<h1>Sell Me Your Watch</h1>
+{% include 'exeter_summer/_tabs.html' %}
+
+<a class="pdf-link" href="{{ url_for('static', filename='templates/exeter_summer/processing/watches/ES_Watch_Project_Directions-2.pdf') }}" download>Download Directions PDF ↓</a>
+
+<div class="proc-grid">
+  {% call window_card("Leo M., Rodrigo B.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/leo_rodrigo.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Gui H., Esteban R.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/gui_esteban.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Hayden K., Abdulrahman H.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/hayden_abdulrahman.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Kerem D., Kevin W.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/kerem_kevin.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Sunny T., Alex R.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/sunny_alex.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Khoa H., Khaled L.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/khoa_khaled.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Elyas A., Luiz C.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/elyas_luiz.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Amyra P., Julia S.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/amyra_julia.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Emily D.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/emily.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Peter K., Omer O.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/peter_omer.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Rosa G., Luke S.") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/rosa_luke.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+
+  {% call window_card("Mr. Kim") %}
+    <script type="application/processing">{% include 'exeter_summer/processing/watches/kim.pde' %}</script>
+    <canvas id="sketch"></canvas>
+  {% endcall %}
+</div>
+{% endblock %}
+
+{% block statusleft %}12 submissions{% endblock %}

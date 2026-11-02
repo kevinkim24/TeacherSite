@@ -1,0 +1,30 @@
+.proc-window{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--window);display:flex;flex-direction:column;height:100%;}
+.proc-titlebar{display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--titlebar);border-bottom:1px solid var(--line);}
+.proc-dots{display:flex;gap:.3rem;}
+.proc-dot{width:7px;height:7px;border-radius:50%;}
+.proc-dot.r{background:var(--red);}.proc-dot.y{background:var(--yellow);}.proc-dot.g{background:var(--green);}
+.proc-name{flex:1;text-align:center;font-size:.7rem;color:var(--ink-soft);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:1.3rem;}
+.proc-screen{padding:.9rem;display:flex;align-items:center;justify-content:center;flex:1;min-height:140px;background:var(--window);}
+.proc-screen canvas,.proc-screen img{max-width:100%;height:auto;display:block;border-radius:4px;}
+.proc-meta{padding:.5rem .8rem .8rem;border-top:1px dashed var(--line);}
+.proc-download{font-size:.74rem;color:var(--accent);text-decoration:none;font-weight:600;}
+.proc-download:hover{text-decoration:underline;}
+.proc-note{font-size:.74rem;color:var(--ink-soft);margin:.4rem 0 0;line-height:1.5;}
+.proc-note a{color:var(--tan);}
+
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.3rem;margin-bottom:1.8rem;}
+
+.assign-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.6rem;}
+.assign-tab{font-size:.78rem;font-weight:600;padding:.4rem .85rem;border-radius:7px;text-decoration:none;color:var(--ink-soft);background:var(--sidebar);border:1px solid var(--line);}
+.assign-tab:hover{border-color:var(--accent);color:var(--ink);}
+.assign-tab.current{background:var(--accent);border-color:var(--accent);color:#fff;}
+
+.letter-toggle{font-size:.78rem;font-weight:700;padding:.5rem 1rem;border-radius:8px;border:1px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer;margin-bottom:1.2rem;}
+.letter-toggle:hover{background:var(--accent);color:#fff;}
+.letter-box{border:1px solid var(--line);border-radius:10px;padding:1.2rem 1.4rem;background:var(--window);margin-bottom:1.8rem;color:var(--ink-soft);line-height:1.7;font-size:.92rem;}
+
+.pdf-link{font-size:.8rem;color:var(--accent);text-decoration:none;font-weight:600;display:inline-block;margin-bottom:1.2rem;}
+.pdf-link:hover{text-decoration:underline;}
+
+.hub-card{text-decoration:none;display:block;color:inherit;}
+.hub-card:hover .proc-window{border-color:var(--accent);}

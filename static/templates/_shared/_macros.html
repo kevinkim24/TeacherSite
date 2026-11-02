@@ -1,0 +1,17 @@
+{% macro window_card(name, download=None, note=None) %}
+<div class="proc-window">
+  <div class="proc-titlebar">
+    <span class="proc-dots"><span class="proc-dot r"></span><span class="proc-dot y"></span><span class="proc-dot g"></span></span>
+    <span class="proc-name">{{ name }}</span>
+  </div>
+  <div class="proc-screen">
+    {{ caller() }}
+  </div>
+  {% if download or note %}
+  <div class="proc-meta">
+    {% if download %}<a class="proc-download" href="{{ download }}" download>Download ↓</a>{% endif %}
+    {% if note %}<p class="proc-note">{{ note|safe }}</p>{% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endmacro %}

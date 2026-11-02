@@ -1,71 +1,66 @@
-<!DOCTYPE html>
-<html>
-	<head>
-    <title>Mr. Kim's Website</title> <!-- Browser tab text -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/templates/general.css">
-    <script src="static/javascript/processing.min.js"></script> <!-- Processing Script -->
-    
-	</head>
-	<body>
-		{% include 'navbar.html' %}
-    <div class="margins-container">
-    <h1 class="head">Exeter Summer 2023 <br>
-      Introduction to Computer Science (A/C)
-    </h1>
-    <div style="text-align:center;padding-bottom:2rem;">
-    <button onclick="toggle()" id="ES-button" class="btn btn-secondary" style="align-self:center;">Open Letter</button></div>
-      <div id="ES-letter" style="display:none;">
-        <h3> <br>
-          {% include 'exeter_summer/note' %} 
-        </h3>
-      </div>
-      <script>
-          function toggle() {
-            var letter = document.getElementById("ES-letter");
-            var button = document.getElementById("ES-button");
-            if(letter.style.display==="none"){
-              letter.style.display = "inline";
-              button.innerHTML = "Close Letter";
-            }
-            else{
-              letter.style.display = "none";
-              button.innerHTML = "Open Letter";
-            }
-          }
-      </script>
-      <table style="width:100%" class="centered-text">
-        <tr style="height:8rem;">
-          <th class="quad"><!--Make an Image-->
-            <script type="application/processing"> 
-            {% include 'processing/make-an-image/elyas.pde' %}
-            </script>
-            <canvas id="sketch" style="max-width:80%;"> </canvas><br>
-            <a href="/exeter_summer/image">Make an Image</a>
-          </th>
-          <th class="quad"><!--Sour Task-->
-            <script type="application/processing"> 
-              {% include 'processing/lemons/khoa.pde' %}
-              </script>
-              <canvas id="sketch" style="max-width:80%;"> </canvas><br>
-              <a href="/exeter_summer/lemon">A Sour Task</a>
-          </th>
-          <th class="quad"><!--Watch-->
-            <script type="application/processing"> 
-            {% include 'processing/watches/sunny_alex.pde' %}
-            </script> 
-            <canvas id="sketch" style="max-width:80%;"></canvas><br>
-            <a href="/exeter_summer/watch">Sell Me Your Watch</a>
-          </th>
-          <th class="quad"><!--Design Project-->
-            <img src="../static/images/leo_esteban_rodrigo.gif" style="max-width:66%;"></img><br>
-            <a href="/exeter_summer/design">Design Project</a>
-          </th>
-        </tr>
-       
-      </table>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-	</body>
-</html>
+{% extends '_shared/window_base.html' %}
+{% from '_shared/_macros.html' import window_card %}
+
+{% block pagetitle %}Exeter Summer '23 — Mr. Kim's Website{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='templates/exeter_summer/exeter.css') }}">
+{% endblock %}
+
+{% block extra_head %}
+<script src="{{ url_for('static', filename='javascript/processing.min.js') }}"></script>
+{% endblock %}
+
+{% block titlebar %}mxork — Exeter Summer '23{% endblock %}
+{% block pathbar %}mxork <span class="sep">›</span> Student Projects <span class="sep">›</span> <span class="here">Exeter Summer '23</span>{% endblock %}
+
+{% block content %}
+<p class="eyebrow">Student Projects</p>
+<h1>Exeter Summer '23 — Introduction to Computer Science (A/C)</h1>
+
+<button class="letter-toggle" id="letterBtn" type="button">Open Letter</button>
+<div class="letter-box" id="letterBox" hidden>
+  {% include 'exeter_summer/note' %}
+</div>
+
+<div class="proc-grid">
+  <a class="hub-card" href="/exeter_summer/image">
+    {% call window_card("Make an Image") %}
+      <script type="application/processing">{% include 'exeter_summer/processing/make-an-image/elyas.pde' %}</script>
+      <canvas id="sketch"></canvas>
+    {% endcall %}
+  </a>
+  <a class="hub-card" href="/exeter_summer/lemon">
+    {% call window_card("A Sour Task") %}
+      <script type="application/processing">{% include 'exeter_summer/processing/lemons/khoa.pde' %}</script>
+      <canvas id="sketch"></canvas>
+    {% endcall %}
+  </a>
+  <a class="hub-card" href="/exeter_summer/watch">
+    {% call window_card("Sell Me Your Watch") %}
+      <script type="application/processing">{% include 'exeter_summer/processing/watches/sunny_alex.pde' %}</script>
+      <canvas id="sketch"></canvas>
+    {% endcall %}
+  </a>
+  <a class="hub-card" href="/exeter_summer/design">
+    {% call window_card("Design Project") %}
+      <img src="{{ url_for('static', filename='images/leo_esteban_rodrigo.gif') }}" alt="Design Project preview">
+    {% endcall %}
+  </a>
+</div>
+{% endblock %}
+
+{% block statusleft %}4 assignments{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function(){
+  const btn = document.getElementById('letterBtn');
+  const box = document.getElementById('letterBox');
+  btn.addEventListener('click', () => {
+    box.hidden = !box.hidden;
+    btn.textContent = box.hidden ? 'Open Letter' : 'Close Letter';
+  });
+})();
+</script>
+{% endblock %}

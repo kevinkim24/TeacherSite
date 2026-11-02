@@ -1,0 +1,14 @@
+<div class="sidebar">
+    <div class="sb-label">Favorites</div>
+    <a class="sb-item{% if active == 'home' %} active{% endif %}" href="/"><span class="ico">🏠</span> Home</a>
+    <a class="sb-item{% if active == 'plt' %} active{% endif %}" href="/plt-blocks" target="_blank"><span class="ico">🧩</span> Matplotlib Lab</a>
+    <details class="sb-group"{% if active == 'exeter' %} open{% endif %}>
+        <summary class="sb-item"><span class="ico">🎓</span> Student Projects</summary>
+        <div class="sb-sub">
+            <a class="sb-item{% if active == 'exeter' %} active{% endif %}" href="/exeter_summer"><span class="ico">☀️</span> Exeter Summer '23</a>
+            <span class="sb-item disabled"><span class="ico">🎒</span> Nobles '24 <span class="soon">Soon</span></span>
+            <span class="sb-item disabled"><span class="ico">🏫</span> Milton '25-26 <span class="soon">Soon</span></span>
+        </div>
+    </details>
+    <span class="sb-item disabled"><span class="ico">🎨</span> Processing Demos <span class="soon">Soon</span></span>
+</div>
