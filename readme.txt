@@ -1,1 +1,1 @@
-START: export APP_SECRET_KEY='d'
+Repository for Mr. Kim's teacher website.
